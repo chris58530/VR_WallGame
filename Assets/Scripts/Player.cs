@@ -13,12 +13,18 @@ public class Player : MonoBehaviour
     public static bool canDetect = false;
     private Vector3 initialRotation;
 
-    private void Start()
+    private void OnEnable()
     {
+        Actions.OnPlayerChoose += DetectPlayerHead;
+        Actions.AfterPlayerChoose += ReStart;
+    }
+    private void OnDisable()
+    {
+        Actions.OnPlayerChoose -= DetectPlayerHead;
+        Actions.AfterPlayerChoose -= ReStart;
 
     }
-
-    private void Update()
+    public void DetectPlayerHead()
     {
         if (!canDetect) return;
         float currentXRotation = transform.eulerAngles.x;
@@ -44,7 +50,9 @@ public class Player : MonoBehaviour
             canDetect = false;
             isHeadShaking = false;
             isHeadNodding = false;
+            ReStart();
             Debug.Log("Head shaking detected");
+
 
         }
         if (isHeadNodding)
@@ -53,6 +61,8 @@ public class Player : MonoBehaviour
             canDetect = false;
             isHeadShaking = false;
             isHeadNodding = false;
+            ReStart();
+
             Debug.Log("Head nodding detected");
         }
     }
@@ -60,6 +70,7 @@ public class Player : MonoBehaviour
     {
         canDetect = true;
         initialRotation = transform.eulerAngles;
+        GameManager.Instance.gameState = GameState.NextRound;
     }
 
 }
