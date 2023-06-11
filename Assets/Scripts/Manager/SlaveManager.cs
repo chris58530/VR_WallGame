@@ -35,7 +35,13 @@ public class SlaveManager : Singleton<SlaveManager>
     }
     public void NextRound()
     {
-     
+        foreach (Slave slave in slavesList)
+        {
+            slave.currentPoint += 1;
+
+            GameManager.Instance.gameState = GameState.Start;
+
+        }
 
     }
     private void OnDisable()
