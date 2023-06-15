@@ -70,7 +70,7 @@ public class Slave : MonoBehaviour
     }
     public void ShowTextOnUI()
     {
-        TMP_Text[] texts = FindObjectsOfType<TMP_Text>();
+        TMP_Text[] texts = GameObject.Find("Dialog").GetComponents<TMP_Text>();
         foreach (TMP_Text tmp in texts)
         {
             tmp.text = text[textNum].ToString();

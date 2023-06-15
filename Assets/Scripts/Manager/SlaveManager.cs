@@ -16,6 +16,7 @@ public class SlaveManager : Singleton<SlaveManager>
     private void OnEnable()
     {
         Actions.GameInitialize += Initailize;
+        Actions.BeforePlayerChoose += RoundStart;
         Actions.AfterPlayerChoose += NextRound;
     }
 
@@ -37,24 +38,31 @@ public class SlaveManager : Singleton<SlaveManager>
         slavesList.Add(slaveObj.GetComponent<Slave>());
         Debug.Log("Spawn Slave");
     }
-    public void NextRound()
+    private void NextRound()
     {
-        GameManager.Instance.gameState = GameState.Start;
         SpawnSlave(0);
-
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;
+        }
+    }
+    private void RoundStart()
+    {
+        foreach (Slave slave in slavesList)
+        {
             if (slave.currentPoint == slavesPoint.Length)
             {
                 currentSlave = slave;
+                Debug.Log(slave.currentPoint);
             }
         }
     }
     private void OnDisable()
     {
         Actions.GameInitialize -= Initailize;
+        Actions.BeforePlayerChoose -= RoundStart;
 
+        Actions.AfterPlayerChoose -= NextRound;
 
     }
     protected override void OnDestroy()

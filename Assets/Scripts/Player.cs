@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         float currentYRotation = transform.eulerAngles.y;
 
 
-        if (Mathf.Abs(currentYRotation - initialRotation.y) > threshold/2)
+        if (Mathf.Abs(currentYRotation - initialRotation.y) > threshold / 2)
         {
             isHeadShaking = true;
             isHeadNodding = false;
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
             canDetect = false;
             isHeadShaking = false;
             isHeadNodding = false;
+            ScoreManager.Instance.UpdateScore(SlaveType.right);
             ReStart();
             Debug.Log("Head shaking detected");
 
@@ -61,6 +62,8 @@ public class Player : MonoBehaviour
             canDetect = false;
             isHeadShaking = false;
             isHeadNodding = false;
+            ScoreManager.Instance.UpdateScore(SlaveType.wrong);
+
             ReStart();
 
             Debug.Log("Head nodding detected");
@@ -68,7 +71,6 @@ public class Player : MonoBehaviour
     }
     public void ReStart()
     {
-        canDetect = true;
         initialRotation = transform.eulerAngles;
         GameManager.Instance.gameState = GameState.NextRound;
     }

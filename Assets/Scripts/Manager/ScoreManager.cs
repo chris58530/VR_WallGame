@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class ScoreManager : Singleton<ScoreManager>
 {
     public int PlayerScore;
@@ -20,9 +20,16 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         PlayerScore = 0;
     }
-    private void UpdateScore(SlaveType type)
+    public void UpdateScore(SlaveType type)
     {
-        slaveType = type;
+        slaveType = SlaveManager.Instance.currentSlave.slaveType;
+        if (type == slaveType)
+            PlayerScore += 1;
+        else PlayerScore -= 1;
+
+        Debug.Log($"目前玩家分數 : {PlayerScore}");
+        TMP_Text text = GameObject.Find("Score").GetComponent<TMP_Text>();
+        text.text = PlayerScore.ToString();
     }
     private void OnDisable()
     {
