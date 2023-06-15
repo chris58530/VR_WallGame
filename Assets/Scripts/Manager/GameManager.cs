@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
         {
             case GameState.Begin:
                 Actions.GameBegin?.Invoke();
-Debug.Log("begin");
+                Debug.Log("begin");
                 break;
             case GameState.Start:
                 Actions.BeforePlayerChoose?.Invoke();

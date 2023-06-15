@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float threshold = 30f;
+    private float threshold = 25f;
     public bool positiveY = false;
     public bool negativeY = false;
     public bool positiveX = false;
@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
 
         float currentXRotation = transform.eulerAngles.x;
         float currentYRotation = transform.eulerAngles.y;
-        Debug.Log(currentXRotation);
 
         if ((currentYRotation - initialRotation.y) > threshold)
         {
@@ -91,6 +90,7 @@ public class Player : MonoBehaviour
             GameManager.Instance.gameState = GameState.Start;
             ReStart();
             Debug.Log("start game");
+            return;
 
         }
         if (isHeadNodding)
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             Debug.Log("start game");
 
             ReStart();
-
+            return;
         }
     }
     public void DetectPlayerHead()
@@ -117,7 +117,6 @@ public class Player : MonoBehaviour
 
         float currentXRotation = transform.eulerAngles.x;
         float currentYRotation = transform.eulerAngles.y;
-        Debug.Log(currentXRotation);
 
         if ((currentYRotation - initialRotation.y) > threshold)
         {
@@ -138,7 +137,6 @@ public class Player : MonoBehaviour
         {
             if (currentXRotation > 100) return;
             negativeX = true;
-            Debug.Log("nagative true");
             // negativeX = false;
             // positiveX = false;
         }
@@ -170,7 +168,7 @@ public class Player : MonoBehaviour
             ReStart();
             Debug.Log("Head shaking detected");
 
-
+            return;
         }
         if (isHeadNodding)
         {
@@ -181,6 +179,7 @@ public class Player : MonoBehaviour
             ReStart();
 
             Debug.Log("Head nodding detected");
+            return;
         }
 
     }

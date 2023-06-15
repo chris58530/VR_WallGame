@@ -7,7 +7,7 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField] private GameObject[] wall;
     [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
-    float Timer = 180;
+    float Timer = 30;
     public int PlayerScore;
     SlaveType slaveType;
 
@@ -32,12 +32,13 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         slaveType = SlaveManager.Instance.currentSlave.slaveType;
         if (type == slaveType)
-            PlayerScore += 1;
+            PlayerScore += 5;
         else PlayerScore -= 1;
 
         Debug.Log($"目前玩家分數 : {PlayerScore}");
-        TMP_Text text = GameObject.Find("Score").GetComponent<TMP_Text>();
-        text.text = PlayerScore.ToString();
+        // TMP_Text text = GameObject.Find("Score").GetComponent<TMP_Text>();
+        // text.text = PlayerScore.ToString();
+        return;
     }
     public void TimeCount()
     {
