@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
+        Actions.GameUpdate?.Invoke();
         switch (gameState)
         {
             case GameState.Start:
@@ -30,6 +31,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.NextRound:
                 Actions.AfterPlayerChoose?.Invoke();
                 gameState = GameState.Start;
+                break;
+            case GameState.End:
+                Actions.GameEnd?.Invoke();
                 break;
         }
     }

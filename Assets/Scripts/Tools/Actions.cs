@@ -11,7 +11,7 @@ public class Actions
     public static Action OnPlayerChoose;
     public static Action AfterPlayerChoose;
 
-
+    public static Action GameUpdate;
     public static Action GameEnd;
 
     public static Action SlaveMove;
