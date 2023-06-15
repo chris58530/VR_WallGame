@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         float currentYRotation = transform.eulerAngles.y;
 
 
-        if (Mathf.Abs(currentYRotation - initialRotation.y) > threshold)
+        if (Mathf.Abs(currentYRotation - initialRotation.y) > threshold/2)
         {
             isHeadShaking = true;
             isHeadNodding = false;

@@ -6,7 +6,7 @@ public class SlaveManager : Singleton<SlaveManager>
 {
     [SerializeField] private Transform[] slavesPoint;
     [SerializeField] private Transform[] slavesLeavePoint;
-    [SerializeField] private GameObject slavePrefab;
+    [SerializeField] private GameObject[] slavePrefab;
     [SerializeField] public List<Slave> slavesList = new List<Slave>();
     protected override void Awake()
     {
@@ -28,24 +28,24 @@ public class SlaveManager : Singleton<SlaveManager>
     }
     private void SpawnSlave(int point)
     {
-        GameObject slaveObj = Instantiate(slavePrefab, slavesPoint[point].position, slavesPoint[point].rotation);
+        int i = Random.Range(0, slavePrefab.Length);
+        GameObject slaveObj = Instantiate(slavePrefab[i], slavesPoint[point].position, slavesPoint[point].rotation);
         slaveObj.GetComponent<Slave>().slavesPoint = slavesPoint;
         slaveObj.GetComponent<Slave>().slavesLeavePoint = slavesLeavePoint;
         slaveObj.GetComponent<Slave>().currentPoint = point;
         slavesList.Add(slaveObj.GetComponent<Slave>());
+        Debug.Log("Spawn Slave");
     }
     public void NextRound()
     {
-       GameManager.Instance.gameState = GameState.Start;
+        GameManager.Instance.gameState = GameState.Start;
         SpawnSlave(0);
+        
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;
-
-         
-
         }
-    
+
 
     }
     private void OnDisable()

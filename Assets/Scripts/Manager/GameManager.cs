@@ -13,21 +13,24 @@ public class GameManager : Singleton<GameManager>
     {
         Actions.GameInitialize?.Invoke();
     }
- 
+
     private void Update()
     {
         switch (gameState)
         {
             case GameState.Start:
                 Actions.BeforePlayerChoose?.Invoke();
+                gameState = GameState.Choosing;
 
                 break;
             case GameState.Choosing:
+                Player.canDetect = true;
                 Actions.OnPlayerChoose?.Invoke();
 
                 break;
             case GameState.NextRound:
                 Actions.AfterPlayerChoose?.Invoke();
+                gameState = GameState.Start;
                 break;
         }
     }

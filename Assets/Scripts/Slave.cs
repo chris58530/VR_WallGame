@@ -7,15 +7,20 @@ public class Slave : MonoBehaviour
 {
     [HideInInspector] public Transform[] slavesPoint;
     [HideInInspector] public Transform[] slavesLeavePoint;
-    [SerializeField] private float speed;
-    public SlaveType slaveType; 
-    [SerializeField,TextArea(4, 10)]private string[] text;
-    [HideInInspector]public int currentPoint;
+    private float speed = 10;
+    public SlaveType slaveType;
+    [SerializeField, TextArea(4, 10)] private string[] text;
+    [HideInInspector] public int currentPoint;
     private int leavePoint = 0;
+    private int textNum;
     private void OnEnable()
     {
         Actions.SlaveMove += MoveToNextPoint;
 
+    }
+    private void Start()
+    {
+        textNum = Random.Range(0, text.Length);
     }
     private void OnDisable()
     {
@@ -31,8 +36,8 @@ public class Slave : MonoBehaviour
             Actions.SlaveLeave += MoveToLeavePoint;
             return;
         }
-        
-        if(currentPoint == slavesPoint.Length - 1)
+
+        if (currentPoint == slavesPoint.Length - 1)
         {
             ShowTextOnUI();
         }
@@ -63,11 +68,12 @@ public class Slave : MonoBehaviour
         }
 
     }
-    public void ShowTextOnUI(){
-        TMP_Text[] text = FindObjectsOfType<TMP_Text>();
-        foreach(TMP_Text tmp in text)
+    public void ShowTextOnUI()
+    {
+        TMP_Text[] texts = FindObjectsOfType<TMP_Text>();
+        foreach (TMP_Text tmp in texts)
         {
-            tmp.text = text[1].ToString();
+            tmp.text = text[textNum].ToString();
         }
     }
 }
