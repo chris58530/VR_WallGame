@@ -344,5 +344,7 @@ MonoBehaviour:
   slavesLeavePoint: []
   speed: 5
   slaveType: 0
-  text: 
+  text:
+  - 
+  - 
   currentPoint: 0

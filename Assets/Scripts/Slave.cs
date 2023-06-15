@@ -9,7 +9,7 @@ public class Slave : MonoBehaviour
     [HideInInspector] public Transform[] slavesLeavePoint;
     [SerializeField] private float speed;
     public SlaveType slaveType; 
-    [SerializeField,TextArea(4, 10)]private string text;
+    [SerializeField,TextArea(4, 10)]private string[] text;
     [HideInInspector]public int currentPoint;
     private int leavePoint = 0;
     private void OnEnable()
@@ -67,7 +67,7 @@ public class Slave : MonoBehaviour
         TMP_Text[] text = FindObjectsOfType<TMP_Text>();
         foreach(TMP_Text tmp in text)
         {
-            tmp.text = text.ToString();
+            tmp.text = text[1].ToString();
         }
     }
 }
