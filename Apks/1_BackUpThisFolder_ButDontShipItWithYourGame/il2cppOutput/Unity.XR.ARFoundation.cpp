@@ -20286,11 +20286,11 @@ IL_01eb_1:
 				Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_94 = __this->___m_CheckMarkTexture_24;
 				NullCheck(L_94);
 				int32_t L_95;
-				L_95 = VirtualFuncInvoker0< int32_t >::Invoke(4 /* System.Int32 UnityEngine.Texture::get_width() */, L_94);
+				L_95 = VirtualFuncInvoker0< int32_t >::Invoke(5 /* System.Int32 UnityEngine.Texture::get_width() */, L_94);
 				Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_96 = __this->___m_CheckMarkTexture_24;
 				NullCheck(L_96);
 				int32_t L_97;
-				L_97 = VirtualFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 UnityEngine.Texture::get_height() */, L_96);
+				L_97 = VirtualFuncInvoker0< int32_t >::Invoke(7 /* System.Int32 UnityEngine.Texture::get_height() */, L_96);
 				Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_98;
 				memset((&L_98), 0, sizeof(L_98));
 				Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23((&L_98), (0.0f), (0.0f), ((float)L_95), ((float)L_97), /*hidden argument*/NULL);
