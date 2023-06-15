@@ -53,10 +53,11 @@ public class SlaveManager : Singleton<SlaveManager>
     {
         foreach (Slave slave in slavesList)
         {
-            if (slave.currentPoint == slavesPoint.Length)
+            if (slave.currentPoint == 8)
             {
                 currentSlave = slave;
                 Debug.Log(slave.currentPoint);
+                break;
             }
         }
     }

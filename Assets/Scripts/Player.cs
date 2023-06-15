@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float threshold = 10f;
+    private float threshold = 30f;
     public bool positiveY = false;
     public bool negativeY = false;
     public bool positiveX = false;
@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         initialRotation = transform.eulerAngles;
-        ReStart();
     }
     public void DetectPlayerHeadToStart()
     {
@@ -91,12 +90,13 @@ public class Player : MonoBehaviour
         {
             GameManager.Instance.gameState = GameState.Start;
             ReStart();
+            Debug.Log("start game");
 
         }
         if (isHeadNodding)
         {
             GameManager.Instance.gameState = GameState.Start;
-
+            Debug.Log("start game");
 
             ReStart();
 
@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
     }
     public void DetectPlayerHead()
     {
-        Vector3 minAngles = new Vector3(-5f, -185f, -5f);
-        Vector3 maxAngles = new Vector3(5f, 185f, 5f);
+        Vector3 minAngles = new Vector3(-10f, -185f, -10f);
+        Vector3 maxAngles = new Vector3(10f, 185f, 10f);
 
         if (transform.eulerAngles.x >= minAngles.x && transform.eulerAngles.x <= maxAngles.x &&
             transform.eulerAngles.y >= minAngles.y && transform.eulerAngles.y <= maxAngles.y
@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
         {
             // 在這裡處理搖頭動作
 
-            ScoreManager.Instance.UpdateScore(SlaveType.right);
+            ScoreManager.Instance.UpdateScore(SlaveType.wrong);
             ReStart();
             Debug.Log("Head shaking detected");
 
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
         {
             // 在這裡處理點頭動作
 
-            ScoreManager.Instance.UpdateScore(SlaveType.wrong);
+            ScoreManager.Instance.UpdateScore(SlaveType.right);
 
             ReStart();
 

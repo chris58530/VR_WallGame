@@ -10,7 +10,7 @@ public class Slave : MonoBehaviour
     private float speed = 10;
     public SlaveType slaveType;
     [SerializeField, TextArea(4, 10)] private string[] text;
-    [HideInInspector] public int currentPoint;
+     public int currentPoint;
     private int leavePoint = 0;
     private int textNum;
     private void OnEnable()

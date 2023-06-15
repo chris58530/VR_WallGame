@@ -2879,7 +2879,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420267539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7586,7 +7586,7 @@ MonoBehaviour:
   positiveX: 0
   negativeX: 0
   canDetect: 0
-  initialRotation: {x: 0, y: 180, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1073656556
 GameObject:
   m_ObjectHideFlags: 0
