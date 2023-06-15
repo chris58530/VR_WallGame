@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Slave : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class Slave : MonoBehaviour
             Actions.SlaveLeave += MoveToLeavePoint;
             return;
         }
+        
+        if(currentPoint == slavesPoint.Length - 1)
+        {
+            ShowTextOnUI();
+        }
         if (Vector3.Distance(transform.position, slavesPoint[currentPoint].position) < 1f) return;
         transform.position = Vector3.MoveTowards(transform.position, slavesPoint[currentPoint].position, speed * Time.deltaTime);
     }
@@ -56,5 +62,12 @@ public class Slave : MonoBehaviour
 
         }
 
+    }
+    public void ShowTextOnUI(){
+        TMP_Text[] text = FindObjectsOfType<TMP_Text>();
+        foreach(TMP_Text tmp in text)
+        {
+            tmp.text = text.ToString();
+        }
     }
 }
