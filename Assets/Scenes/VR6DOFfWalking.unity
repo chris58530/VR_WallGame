@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e391f00234292cc4f935308c11cf0e54, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43846846, g: 0.4865533, b: 0.56682944, a: 1}
+  m_IndirectSpecularColor: {r: 0.4010872, g: 0.34836668, b: 0.2795051, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -946,6 +946,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74280317}
   m_CullTransparentMesh: 1
+--- !u!1 &90965708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90965709}
+  m_Layer: 0
+  m_Name: CamPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90965709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90965708}
+  m_LocalRotation: {x: 0.14567441, y: 0.5991724, z: -0.11201128, w: 0.77924633}
+  m_LocalPosition: {x: -111.64256, y: 18.041752, z: -71.08446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 917927411}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &99084225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &322293630
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,7 +1906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &465684441
 Transform:
   m_ObjectHideFlags: 0
@@ -2369,7 +2400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ae712ed63f245ea9669a8e9746dce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 30
+  wall: []
+  EndPoint: {fileID: 90965709}
   PlayerScore: 0
 --- !u!1 &718616345
 GameObject:
@@ -2878,6 +2910,7 @@ Transform:
   - {fileID: 963402898}
   - {fileID: 482854013}
   - {fileID: 712715421}
+  - {fileID: 90965709}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

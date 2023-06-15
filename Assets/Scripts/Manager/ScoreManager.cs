@@ -4,7 +4,9 @@ using UnityEngine;
 using TMPro;
 public class ScoreManager : Singleton<ScoreManager>
 {
-    public float Timer = 30;
+    [SerializeField] private GameObject[] wall;
+    [SerializeField] private Transform EndPoint;
+    float Timer = 10;
     public int PlayerScore;
     SlaveType slaveType;
 
@@ -16,6 +18,7 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         Actions.GameInitialize += Initailize;
         Actions.GameUpdate += TimeCount;
+        Actions.GameEnd += WallActive;
     }
 
     private void Initailize()
@@ -35,21 +38,66 @@ public class ScoreManager : Singleton<ScoreManager>
     }
     public void TimeCount()
     {
+        GameObject[] texts = GameObject.FindGameObjectsWithTag("Timer");
+
         if (Timer > 0)
         {
             Timer -= Time.deltaTime;
+            for (int i = 0; i < texts.Length; i++)
+            {
+                texts[i].GetComponent<TMP_Text>().text = Mathf.Floor(Timer).ToString();
+
+            }
         }
-        GameObject[] texts = GameObject.FindGameObjectsWithTag("Timer");
-        for (int i = 0; i < texts.Length; i++)
+        else
         {
-            texts[i].GetComponent<TMP_Text>().text = Mathf.Floor(Timer).ToString();
+            GameManager.Instance.gameState = GameState.End;
+             for (int i = 0; i < texts.Length; i++)
+            {
+                texts[i].GetComponent<TMP_Text>().text = "你的分數 : "+PlayerScore.ToString();
+
+            }
+        }
+
+
+    }
+
+    private void WallActive()
+    {
+        GameObject player = FindObjectOfType<Player>().gameObject;
+        player.transform.position = EndPoint.transform.position;
+        player.transform.rotation = EndPoint.transform.rotation;
+        for (int i = 0; i <= wall.Length; i++)
+        {
+            wall[i].SetActive(false);
+        }
+        if (PlayerScore >= 75)
+        {
+            wall[0].SetActive(true);
+        }
+        else if (PlayerScore < 75 && PlayerScore >= 50)
+        {
+            wall[1].SetActive(true);
 
         }
+        else if (PlayerScore < 50 && PlayerScore >= 25)
+        {
+
+            wall[2].SetActive(true);
+        }
+        else
+        {
+            wall[3].SetActive(true);
+
+        }
+
     }
     private void OnDisable()
     {
         Actions.GameInitialize -= Initailize;
         Actions.GameUpdate -= TimeCount;
+        Actions.GameEnd -= WallActive;
+
     }
     protected override void OnDestroy()
     {
