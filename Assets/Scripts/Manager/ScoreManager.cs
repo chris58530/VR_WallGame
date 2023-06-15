@@ -5,6 +5,7 @@ using TMPro;
 public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField] private GameObject[] wall;
+    [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
     float Timer = 10;
     public int PlayerScore;
@@ -19,6 +20,8 @@ public class ScoreManager : Singleton<ScoreManager>
         Actions.GameInitialize += Initailize;
         Actions.GameUpdate += TimeCount;
         Actions.GameEnd += WallActive;
+        // Actions.GameBegin += SetPlayerCam;
+        Actions.GameEnd += SetPlayerCam;
     }
 
     private void Initailize()
@@ -52,21 +55,24 @@ public class ScoreManager : Singleton<ScoreManager>
         else
         {
             GameManager.Instance.gameState = GameState.End;
-             for (int i = 0; i < texts.Length; i++)
+            for (int i = 0; i < texts.Length; i++)
             {
-                texts[i].GetComponent<TMP_Text>().text = "你的分數 : "+PlayerScore.ToString();
+                texts[i].GetComponent<TMP_Text>().text = "你的分數 : " + PlayerScore.ToString();
 
             }
         }
 
 
     }
-
-    private void WallActive()
+    private void SetPlayerCam()
     {
         GameObject player = FindObjectOfType<Player>().gameObject;
         player.transform.position = EndPoint.transform.position;
         player.transform.rotation = EndPoint.transform.rotation;
+    }
+    private void WallActive()
+    {
+
         for (int i = 0; i <= wall.Length; i++)
         {
             wall[i].SetActive(false);
@@ -97,7 +103,8 @@ public class ScoreManager : Singleton<ScoreManager>
         Actions.GameInitialize -= Initailize;
         Actions.GameUpdate -= TimeCount;
         Actions.GameEnd -= WallActive;
-
+        // Actions.GameBegin -= SetPlayerCam;
+        Actions.GameEnd -= SetPlayerCam;
     }
     protected override void OnDestroy()
     {

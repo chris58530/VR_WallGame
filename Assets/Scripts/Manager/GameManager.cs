@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState gameState = GameState.Start;
+    public GameState gameState = GameState.Begin;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -12,13 +14,17 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         Actions.GameInitialize?.Invoke();
+        gameState = GameState.Begin;
     }
 
     private void Update()
     {
-        Actions.GameUpdate?.Invoke();
         switch (gameState)
         {
+            case GameState.Begin:
+                Actions.GameBegin?.Invoke();
+
+                break;
             case GameState.Start:
                 Actions.BeforePlayerChoose?.Invoke();
                 gameState = GameState.Choosing;
@@ -26,6 +32,7 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameState.Choosing:
                 Actions.OnPlayerChoose?.Invoke();
+                Actions.GameUpdate?.Invoke();
 
                 break;
             case GameState.NextRound:
