@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-        public int PlayerScore;
+    public int PlayerScore;
 
-     protected override void Awake()
+    protected override void Awake()
     {
         base.Awake();
     }
-    private void OnEnable(){
+    private void OnEnable()
+    {
         Actions.GameInitialize += Initailize;
     }
 
-       private void Initailize()
+    private void Initailize()
     {
         PlayerScore = 0;
+    }
+    private void OnDisable()
+    {
+        Actions.GameInitialize -= Initailize;
+
     }
      protected override void OnDestroy()
     {
