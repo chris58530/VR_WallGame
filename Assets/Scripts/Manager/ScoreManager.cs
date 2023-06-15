@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.ARFoundation;
+
 public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField] private GameObject[] wall;
@@ -10,7 +12,6 @@ public class ScoreManager : Singleton<ScoreManager>
     float Timer = 30;
     public int PlayerScore;
     SlaveType slaveType;
-
     protected override void Awake()
     {
         base.Awake();
@@ -68,6 +69,8 @@ public class ScoreManager : Singleton<ScoreManager>
     private void SetPlayerCam()
     {
         GameObject player = FindObjectOfType<Player>().gameObject;
+        player.GetComponent<ARCameraBackground>().enabled = false;
+        player.GetComponent<ARCameraManager>().enabled = false;
         player.transform.position = EndPoint.transform.position;
         player.transform.rotation = EndPoint.transform.rotation;
     }
