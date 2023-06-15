@@ -24,7 +24,6 @@ public class GameManager : Singleton<GameManager>
 
                 break;
             case GameState.Choosing:
-                Player.canDetect = true;
                 Actions.OnPlayerChoose?.Invoke();
 
                 break;
