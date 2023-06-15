@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8970735282001364104}
+  - component: {fileID: 810679774}
   m_Layer: 0
   m_Name: 3.S+Rice
   m_TagString: Untagged
@@ -116,6 +117,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &810679774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143303369337244624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slavesPoint: []
+  slavesLeavePoint: []
+  speed: 5
+  slaveType: 0
+  text:
+  - "\u9577\u5B98,\u9019\u662F\u60A8\u5429\u5490\u7684\u9ECF\u7A20\u7CEF\u7C73\u6C41"
+  - "\u9019\u662F\u7528\u7CEF\u7C73\u71AC\u88FD\u800C\u6210\u7684\u6E6F\u6C41"
+  currentPoint: 0
 --- !u!1 &2904339402008115102
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +146,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6056566397325267969}
-  - component: {fileID: 5043444997348541542}
   m_Layer: 0
   m_Name: Slave (3)
   m_TagString: Untagged
@@ -150,24 +170,6 @@ Transform:
   m_Father: {fileID: 8970735282001364104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5043444997348541542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2904339402008115102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slavesPoint: []
-  slavesLeavePoint: []
-  speed: 5
-  slaveType: 0
-  text: 
-  currentPoint: 0
 --- !u!1 &4357278963335315949
 GameObject:
   m_ObjectHideFlags: 0

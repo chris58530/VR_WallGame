@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7159077426312096141}
-  - component: {fileID: 310469054438819979}
   m_Layer: 0
   m_Name: Slave
   m_TagString: Untagged
@@ -34,24 +33,6 @@ Transform:
   m_Father: {fileID: 8133717380586574170}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &310469054438819979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942770468873227953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slavesPoint: []
-  slavesLeavePoint: []
-  speed: 5
-  slaveType: 0
-  text: 
-  currentPoint: 0
 --- !u!1 &2185020889517542624
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8133717380586574170}
+  - component: {fileID: 1996689616}
   m_Layer: 0
   m_Name: 2.S+Earth
   m_TagString: Untagged
@@ -85,6 +67,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996689616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2185020889517542624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slavesPoint: []
+  slavesLeavePoint: []
+  speed: 5
+  slaveType: -1
+  text:
+  - "\u9019\u662F\u6316\u5730\u57FA\u6642\u6316\u51FA\u4F86\u7684\u6CE5\u571F,\u53EF\u4EE5\u76F4\u63A5\u62CC\u9032\u53BB\u7D05\u6BDB\u571F\u55CE?"
+  - "\u9019\u662F\u5F9E\u65C1\u908A\u571F\u8457\u7684\u8FB2\u7530\u88E1\u6316\u904E\u4F86\u7684\u571F\r"
+  currentPoint: 0
 --- !u!1 &2591475121343150191
 GameObject:
   m_ObjectHideFlags: 0

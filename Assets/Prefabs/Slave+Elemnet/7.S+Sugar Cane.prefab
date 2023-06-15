@@ -155,7 +155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5683360405404190080}
-  - component: {fileID: 5683360405404190081}
   m_Layer: 0
   m_Name: Slave (7)
   m_TagString: Untagged
@@ -180,24 +179,6 @@ Transform:
   m_Father: {fileID: 5683360405863556375}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5683360405404190081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683360405404190086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slavesPoint: []
-  slavesLeavePoint: []
-  speed: 5
-  slaveType: 0
-  text: 
-  currentPoint: 0
 --- !u!1 &5683360405863556372
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5683360405863556375}
+  - component: {fileID: 741297091}
   m_Layer: 0
   m_Name: 7.S+Sugar Cane
   m_TagString: Untagged
@@ -231,6 +213,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741297091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683360405863556372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slavesPoint: []
+  slavesLeavePoint: []
+  speed: 5
+  slaveType: 0
+  text:
+  - "\u9019\u7247\u5E73\u539F\u9644\u8FD1\u597D\u591A\u7518\u8517,\u71AC\u716E\u7CD6\u6C34\u597D\u65B9\u4FBF"
+  - "\u9019\u4E9B\u7518\u8517\u53C8\u751C\u53C8\u591A\u6C41,\u62FF\u4F86\u505A\u6210\u7D05\u6BDB\u571F\u592A\u6D6A\u8CBB\u4E86\u5427"
+  currentPoint: 0
 --- !u!1 &7104752543329402585
 GameObject:
   m_ObjectHideFlags: 0

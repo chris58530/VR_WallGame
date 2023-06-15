@@ -270,7 +270,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6573672388722735627}
-  - component: {fileID: 6898111391456548986}
   m_Layer: 0
   m_Name: Slave (4)
   m_TagString: Untagged
@@ -295,24 +294,6 @@ Transform:
   m_Father: {fileID: 6350059928422093594}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6898111391456548986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5733050547113361273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slavesPoint: []
-  slavesLeavePoint: []
-  speed: 5
-  slaveType: 0
-  text: 
-  currentPoint: 0
 --- !u!1 &7555068020223745317
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6350059928422093594}
+  - component: {fileID: 1898942702}
   m_Layer: 0
   m_Name: 5.S+Shell
   m_TagString: Untagged
@@ -346,3 +328,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898942702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555068020223745317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slavesPoint: []
+  slavesLeavePoint: []
+  speed: 5
+  slaveType: 0
+  text:
+  - "\u9019\u88E1\u6CBF\u6D77\u751F\u7522\u597D\u591A\u86B5,\u6B63\u597D\u80FD\u6BEB\u4E0D\u6D6A\u8CBB\u7684\u628A\u6BBC\u62FF\u4F86\u7528"
+  - "\u6C92\u60F3\u5230\u5C0F\u5C0F\u86B5\u6BBC\u7ADF\u7136\u53EF\u4EE5\u6210\u70BA\u5EFA\u9020\u57CE\u7246\u7684\u539F\u6599"
+  currentPoint: 0
