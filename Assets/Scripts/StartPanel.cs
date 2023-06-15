@@ -14,6 +14,6 @@ public class StartPanel : MonoBehaviour
     }
     private void OnDisable()
     {
-        Actions.BeforePlayerChoose += SetAct;
+        Actions.BeforePlayerChoose -= SetAct;
     }
 }

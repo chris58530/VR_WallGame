@@ -73,10 +73,6 @@ public class ScoreManager : Singleton<ScoreManager>
     private void WallActive()
     {
 
-        for (int i = 0; i <= wall.Length; i++)
-        {
-            wall[i].SetActive(false);
-        }
         if (PlayerScore >= 75)
         {
             wall[0].SetActive(true);

@@ -71,10 +71,22 @@ public class Slave : MonoBehaviour
     public void ShowTextOnUI()
     {
         GameObject[] texts = GameObject.FindGameObjectsWithTag("Dialog");
-        for(int i = 0; i<texts.Length;i++)
+        if (GameManager.Instance.gameState == GameState.End)
         {
-            texts[i].GetComponent<TMP_Text>().text = text[textNum].ToString();;
+            for (int i = 0; i < texts.Length; i++)
+            {
+                texts[i].GetComponent<TMP_Text>().text = "呼! 城牆蓋好囉大爺!";
 
+            }
+        }
+        else
+        {
+
+            for (int i = 0; i < texts.Length; i++)
+            {
+                texts[i].GetComponent<TMP_Text>().text = text[textNum].ToString(); 
+
+            }
         }
     }
 }
