@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScoreManager : Singleton<ScoreManager>
 {
     public int PlayerScore;
+    SlaveType slaveType;
 
     protected override void Awake()
     {
@@ -19,9 +20,9 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         PlayerScore = 0;
     }
-    private void UpdateScore()
+    private void UpdateScore(SlaveType type)
     {
-        
+        slaveType = type;
     }
     private void OnDisable()
     {

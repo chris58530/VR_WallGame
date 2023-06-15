@@ -8,6 +8,7 @@ public class SlaveManager : Singleton<SlaveManager>
     [SerializeField] private Transform[] slavesLeavePoint;
     [SerializeField] private GameObject[] slavePrefab;
     [SerializeField] public List<Slave> slavesList = new List<Slave>();
+    public Slave currentSlave = null;
     protected override void Awake()
     {
         base.Awake();
@@ -40,13 +41,15 @@ public class SlaveManager : Singleton<SlaveManager>
     {
         GameManager.Instance.gameState = GameState.Start;
         SpawnSlave(0);
-        
+
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;
+            if (slave.currentPoint == slavesPoint.Length)
+            {
+                currentSlave = slave;
+            }
         }
-
-
     }
     private void OnDisable()
     {

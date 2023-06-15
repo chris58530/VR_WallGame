@@ -7,6 +7,6 @@ public enum GameState
     Start,Choosing,NextRound
 }
 public enum SlaveType{
-    wrong = -1,right = 0 
+    wrong ,right  
 }
 
