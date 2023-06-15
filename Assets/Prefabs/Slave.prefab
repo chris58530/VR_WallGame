@@ -79,7 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slavesPoint: []
   slavesLeavePoint: []
-  speed: 3
+  speed: 5
+  slaveType: 0
+  text: 
   currentPoint: 0
 --- !u!1 &8475675252648106292
 GameObject:

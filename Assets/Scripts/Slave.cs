@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Slave : MonoBehaviour
 {
-    [SerializeField] public Transform[] slavesPoint;
-    [SerializeField] public Transform[] slavesLeavePoint;
+    [HideInInspector] public Transform[] slavesPoint;
+    [HideInInspector] public Transform[] slavesLeavePoint;
     [SerializeField] private float speed;
-    public int currentPoint;
+    public SlaveType slaveType; 
+    [SerializeField,TextArea(4, 10)]private string text;
+    [HideInInspector]public int currentPoint;
     private int leavePoint = 0;
     private void OnEnable()
     {
