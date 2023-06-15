@@ -13,6 +13,10 @@ public class GameManager : Singleton<GameManager>
     {
         Actions.GameInitialize?.Invoke();
     }
+    private void Initailize()
+    {
+        PlayerScore = 0;
+    }
     private void Update()
     {
         switch (gameState)

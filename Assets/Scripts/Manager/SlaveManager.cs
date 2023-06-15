@@ -37,7 +37,7 @@ public class SlaveManager : Singleton<SlaveManager>
     public void NextRound()
     {
        GameManager.Instance.gameState = GameState.Start;
-
+        SpawnSlave(0);
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;

@@ -7,6 +7,8 @@ public class Slave : MonoBehaviour
     [SerializeField] public Transform[] slavesPoint;
     [SerializeField] public Transform[] slavesLeavePoint;
     [SerializeField] private float speed;
+    public SlaveType slaveType; 
+    [SerializeField]private string text;
     public int currentPoint;
     private int leavePoint = 0;
     private void OnEnable()
