@@ -7,7 +7,7 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField] private GameObject[] wall;
     [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
-    float Timer = 10;
+    float Timer = 180;
     public int PlayerScore;
     SlaveType slaveType;
 
