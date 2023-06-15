@@ -44,9 +44,9 @@ public class Player : MonoBehaviour
         }
         if (!canDetect) return;
 
-        Debug.Log("DetectPlayerHead");
         float currentXRotation = transform.eulerAngles.x;
         float currentYRotation = transform.eulerAngles.y;
+        Debug.Log(currentXRotation);
 
         if ((currentYRotation - initialRotation.y) > threshold)
         {
@@ -65,13 +65,14 @@ public class Player : MonoBehaviour
 
         if ((currentXRotation >= threshold))
         {
+            if (currentXRotation > 100) return;
             negativeX = true;
             Debug.Log("nagative true");
             // negativeX = false;
             // positiveX = false;
         }
 
-        // if (currentXRotation < -threshold)
+        // if (currentXRotation < 350 && currentXRotation > 300)
         // {
         //     positiveX = true;
 
@@ -84,7 +85,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (negativeX)
+        if ( negativeX)
         {
             isHeadNodding = true;
             isHeadShaking = false;
