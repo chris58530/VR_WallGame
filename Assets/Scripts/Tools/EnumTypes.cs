@@ -4,7 +4,7 @@ public enum SceneType
 }
 public enum GameState
 {
-    Begin,Start,Choosing,NextRound,End
+    Begin,Initialize,Start,Choosing,NextRound,End
 }
 public enum SlaveType{
     wrong ,right  
