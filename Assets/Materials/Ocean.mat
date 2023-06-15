@@ -37,5 +37,11 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    m_Colors: []
+    - _Simness: 8
+    - _Speed: 1
+    - _density: 100
+    m_Colors:
+    - _BaseColor: {r: 0.3183517, g: 0.6263755, b: 0.9245283, a: 0}
+    - _RapleColor: {r: 1.109601, g: 6.523108, b: 8.103448, a: 0}
+    - _STR: {r: 3, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
