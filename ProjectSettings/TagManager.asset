@@ -9,6 +9,7 @@ TagManager:
   - DoBt
   - CancelBt
   - Dialog
+  - Timer
   layers:
   - Default
   - TransparentFX
