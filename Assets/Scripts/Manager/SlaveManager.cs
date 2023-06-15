@@ -15,6 +15,7 @@ public class SlaveManager : Singleton<SlaveManager>
     private void OnEnable()
     {
         Actions.GameInitialize += Initailize;
+        Actions.AfterPlayerChoose += NextRound;
     }
 
 
@@ -35,13 +36,16 @@ public class SlaveManager : Singleton<SlaveManager>
     }
     public void NextRound()
     {
+       GameManager.Instance.gameState = GameState.Start;
+
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;
 
-            GameManager.Instance.gameState = GameState.Start;
+         
 
         }
+    
 
     }
     private void OnDisable()
