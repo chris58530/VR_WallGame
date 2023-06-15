@@ -70,10 +70,11 @@ public class Slave : MonoBehaviour
     }
     public void ShowTextOnUI()
     {
-        TMP_Text[] texts = GameObject.Find("Dialog").GetComponents<TMP_Text>();
-        foreach (TMP_Text tmp in texts)
+        GameObject[] texts = GameObject.FindGameObjectsWithTag("Dialog");
+        for(int i = 0; i<texts.Length;i++)
         {
-            tmp.text = text[textNum].ToString();
+            texts[i].GetComponent<TMP_Text>().text = text[textNum].ToString();;
+
         }
     }
 }

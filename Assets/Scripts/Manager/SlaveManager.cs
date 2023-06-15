@@ -26,7 +26,10 @@ public class SlaveManager : Singleton<SlaveManager>
         for (int i = 0; i < slavesPoint.Length; i++)
         {
             SpawnSlave(i);
+
+            currentSlave = slavesList[0];
         }
+
     }
     private void SpawnSlave(int point)
     {

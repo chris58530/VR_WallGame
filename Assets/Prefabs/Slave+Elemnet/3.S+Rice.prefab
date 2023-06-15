@@ -131,8 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slavesPoint: []
   slavesLeavePoint: []
-  speed: 5
-  slaveType: 0
+  slaveType: 1
   text:
   - "\u9577\u5B98,\u9019\u662F\u60A8\u5429\u5490\u7684\u9ECF\u7A20\u7CEF\u7C73\u6C41"
   - "\u9019\u662F\u7528\u7CEF\u7C73\u71AC\u88FD\u800C\u6210\u7684\u6E6F\u6C41"

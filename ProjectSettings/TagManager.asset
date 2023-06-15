@@ -8,6 +8,7 @@ TagManager:
   - Switch
   - DoBt
   - CancelBt
+  - Dialog
   layers:
   - Default
   - TransparentFX

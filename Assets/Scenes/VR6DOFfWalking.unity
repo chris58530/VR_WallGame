@@ -1749,7 +1749,7 @@ GameObject:
   - component: {fileID: 899488710}
   m_Layer: 0
   m_Name: Dialog
-  m_TagString: Untagged
+  m_TagString: Dialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3149,7 +3149,7 @@ GameObject:
   - component: {fileID: 1480287252}
   m_Layer: 0
   m_Name: Dialog
-  m_TagString: Untagged
+  m_TagString: Dialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
