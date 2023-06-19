@@ -35,12 +35,15 @@ public class ScoreManager : Singleton<ScoreManager>
         if (type == slaveType)
         {
             ViewCanvas.Instance.PlayAnswerView(true);
+            AudioManager.Instance.PlayUI("Right");
             PlayerScore += 5;
 
         }
         else
         {
             ViewCanvas.Instance.PlayAnswerView(false);
+            AudioManager.Instance.PlayUI("Wrong");
+
             PlayerScore -= 1;
         }
         Debug.Log($"目前玩家分數 : {PlayerScore}");
