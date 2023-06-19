@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: dcfe88d943b8c8c41a0252e7d47203a1
+  - enabled: 1
     path: Assets/Scenes/VR6DOFfWalking.unity
     guid: 17d6402472a8b2b4790c6b3c9b890fc1
   m_configObjects:

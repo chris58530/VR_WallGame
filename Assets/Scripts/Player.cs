@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
     public bool negativeY = false;
     public bool positiveX = false;
     public bool negativeX = false;
-    private bool isHeadShaking = false;
-    private bool isHeadNodding = false;
+    public bool isHeadShaking = false;
+    public bool isHeadNodding = false;
     public bool canDetect = false;
 
     [SerializeField] private Vector3 initialRotation;
@@ -169,7 +169,8 @@ public class Player : MonoBehaviour
         {
             // 在這裡處理搖頭動作
 
-            ScoreManager.Instance.UpdateScore(SlaveType.wrong);
+            if (ScoreManager.Instance != null)
+                ScoreManager.Instance.UpdateScore(SlaveType.wrong);
             ReStart();
             Debug.Log("Head shaking detected");
 
@@ -178,8 +179,8 @@ public class Player : MonoBehaviour
         if (isHeadNodding)
         {
             // 在這裡處理點頭動作
-
-            ScoreManager.Instance.UpdateScore(SlaveType.right);
+            if (ScoreManager.Instance != null)
+                ScoreManager.Instance.UpdateScore(SlaveType.right);
 
             ReStart();
 
@@ -217,7 +218,7 @@ public class Player : MonoBehaviour
 
             if (hit.transform.tag == "Slave")
             {
-                   canDetect = true;
+                canDetect = true;
             }
 
         }

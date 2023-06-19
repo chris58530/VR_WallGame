@@ -10,9 +10,14 @@ public class Slave : MonoBehaviour
     private float speed = 10;
     public SlaveType slaveType;
     [SerializeField, TextArea(4, 10)] private string[] text;
-     public int currentPoint;
+    public int currentPoint;
     private int leavePoint = 0;
     private int textNum;
+    Animator ani;
+    void Awake()
+    {
+        ani = GetComponentInChildren<Animator>();
+    }
     private void OnEnable()
     {
         Actions.SlaveMove += MoveToNextPoint;
@@ -41,11 +46,18 @@ public class Slave : MonoBehaviour
         {
             ShowTextOnUI();
         }
-        if (Vector3.Distance(transform.position, slavesPoint[currentPoint].position) < 1f) return;
+        if (Vector3.Distance(transform.position, slavesPoint[currentPoint].position) < 1f)
+        {
+            ani.Play("Idle");
+            return;
+        }
+        ani.Play("Walking");
+
         transform.position = Vector3.MoveTowards(transform.position, slavesPoint[currentPoint].position, speed * Time.deltaTime);
     }
     private void MoveToLeavePoint()
     {
+        ani.Play("Walking");
 
         if (leavePoint == 0)
         {
@@ -84,7 +96,7 @@ public class Slave : MonoBehaviour
 
             for (int i = 0; i < texts.Length; i++)
             {
-                texts[i].GetComponent<TMP_Text>().text = text[textNum].ToString(); 
+                texts[i].GetComponent<TMP_Text>().text = text[textNum].ToString();
 
             }
         }
