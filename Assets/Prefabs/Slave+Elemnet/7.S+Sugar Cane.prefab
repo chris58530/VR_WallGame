@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 5683360405863556375}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.819, y: -7.65, z: -26.432}
---- !u!1 &3393037765979643787
+--- !u!1 &5683360405863556372
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,47 +40,101 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 228177912018346453}
-  - component: {fileID: 258349396959715158}
-  - component: {fileID: 3994758346885127103}
-  - component: {fileID: 585158933694339657}
-  m_Layer: 8
-  m_Name: Cube (1)
+  - component: {fileID: 5683360405863556375}
+  - component: {fileID: 741297091}
+  m_Layer: 0
+  m_Name: 7.S+Sugar Cane
   m_TagString: Slave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &228177912018346453
+--- !u!4 &5683360405863556375
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393037765979643787}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.082, y: 4.191, z: -0.32}
-  m_LocalScale: {x: 0.71343, y: 0.71343, z: 0.71343}
+  m_GameObject: {fileID: 5683360405863556372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4906326862441092551}
+  - {fileID: 2867140310094745911}
+  - {fileID: 1852554056691607399}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741297091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683360405863556372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slavesPoint: []
+  slavesLeavePoint: []
+  slaveType: 1
+  text:
+  - "\u9019\u7247\u5E73\u539F\u9644\u8FD1\u597D\u591A\u7518\u8517,\u71AC\u716E\u7CD6\u6C34\u597D\u65B9\u4FBF"
+  - "\u9019\u4E9B\u7518\u8517\u53C8\u751C\u53C8\u591A\u6C41,\u62FF\u4F86\u505A\u6210\u7D05\u6BDB\u571F\u592A\u6D6A\u8CBB\u4E86\u5427"
+  currentPoint: 0
+--- !u!1 &6628058902767784929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852554056691607399}
+  - component: {fileID: 7741945742499935734}
+  - component: {fileID: 7588102746061536687}
+  - component: {fileID: 1648367709256047453}
+  m_Layer: 8
+  m_Name: Cube
+  m_TagString: Slave
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852554056691607399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628058902767784929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.8, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5683360405863556375}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &258349396959715158
+--- !u!33 &7741945742499935734
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393037765979643787}
+  m_GameObject: {fileID: 6628058902767784929}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3994758346885127103
+--- !u!23 &7588102746061536687
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393037765979643787}
+  m_GameObject: {fileID: 6628058902767784929}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -116,73 +170,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &585158933694339657
+--- !u!65 &1648367709256047453
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393037765979643787}
+  m_GameObject: {fileID: 6628058902767784929}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5683360405863556372
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5683360405863556375}
-  - component: {fileID: 741297091}
-  m_Layer: 0
-  m_Name: 7.S+Sugar Cane
-  m_TagString: Slave
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5683360405863556375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683360405863556372}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4906326862441092551}
-  - {fileID: 2867140310094745911}
-  - {fileID: 228177912018346453}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &741297091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683360405863556372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5e3db3f1e14474086099f5f6d6d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slavesPoint: []
-  slavesLeavePoint: []
-  slaveType: 1
-  text:
-  - "\u9019\u7247\u5E73\u539F\u9644\u8FD1\u597D\u591A\u7518\u8517,\u71AC\u716E\u7CD6\u6C34\u597D\u65B9\u4FBF"
-  - "\u9019\u4E9B\u7518\u8517\u53C8\u751C\u53C8\u591A\u6C41,\u62FF\u4F86\u505A\u6210\u7D05\u6BDB\u571F\u592A\u6D6A\u8CBB\u4E86\u5427"
-  currentPoint: 0
 --- !u!1 &7104752543329402585
 GameObject:
   m_ObjectHideFlags: 0
