@@ -61,7 +61,7 @@ public class ScoreManager : Singleton<ScoreManager>
             Timer -= Time.deltaTime;
             for (int i = 0; i < texts.Length; i++)
             {
-                texts[i].GetComponent<TMP_Text>().text = Mathf.Floor(Timer).ToString();
+                texts[i].GetComponent<TMP_Text>().text = "剩餘時間 : " + Mathf.Floor(Timer).ToString();
 
             }
         }
@@ -70,8 +70,7 @@ public class ScoreManager : Singleton<ScoreManager>
             GameManager.Instance.gameState = GameState.End;
             for (int i = 0; i < texts.Length; i++)
             {
-                texts[i].GetComponent<TMP_Text>().text = "你的分數 : " + PlayerScore.ToString();
-
+                texts[i].GetComponent<TMP_Text>().text = "城牆完成度 : " + PlayerScore.ToString() + "%";
             }
         }
 

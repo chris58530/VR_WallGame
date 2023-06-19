@@ -18,12 +18,15 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         Actions.OnPlayerChoose += DetectPlayerHead;
+        Actions.OnPlayerChoose += CamRay;
         Actions.AfterPlayerChoose += ReStart;
         Actions.GameBegin += DetectPlayerHeadToStart;
     }
     private void OnDisable()
     {
         Actions.OnPlayerChoose -= DetectPlayerHead;
+        Actions.OnPlayerChoose -= CamRay;
+
         Actions.AfterPlayerChoose -= ReStart;
         Actions.GameBegin -= DetectPlayerHeadToStart;
 
@@ -109,12 +112,12 @@ public class Player : MonoBehaviour
         Vector3 minAngles = new Vector3(-10f, -185f, -10f);
         Vector3 maxAngles = new Vector3(10f, 185f, 10f);
 
-        if (transform.eulerAngles.x >= minAngles.x && transform.eulerAngles.x <= maxAngles.x &&
-            transform.eulerAngles.y >= minAngles.y && transform.eulerAngles.y <= maxAngles.y
-           )
-        {
-            canDetect = true;
-        }
+        // if (transform.eulerAngles.x >= minAngles.x && transform.eulerAngles.x <= maxAngles.x &&
+        //     transform.eulerAngles.y >= minAngles.y && transform.eulerAngles.y <= maxAngles.y
+        //    )
+        // {
+        //     canDetect = true;
+        // }
         if (!canDetect) return;
 
         float currentXRotation = transform.eulerAngles.x;
@@ -196,5 +199,33 @@ public class Player : MonoBehaviour
         negativeY = false;
         GameManager.Instance.gameState = GameState.NextRound;
     }
+    public void CamRay()
+    {
+        Debug.Log("camera ray +++++++++++");
+        GameObject playerCam = this.gameObject;
+        int layerMask = 1 << 8;
 
+        //開啟除Layer8之外的其他層
+        //layerMask = ~layerMask;
+
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.TransformDirection(Vector3.forward), out hit, 4.0f, layerMask))
+        {
+            Debug.DrawRay(playerCam.transform.position, playerCam.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            Debug.Log("Did Hit");
+
+            if (hit.transform.tag == "Slave")
+            {
+                   canDetect = true;
+            }
+
+        }
+        else
+        {
+            Debug.DrawRay(playerCam.transform.position, playerCam.transform.TransformDirection(Vector3.forward) * 4.0f, Color.red);
+
+
+        }
+    }
 }

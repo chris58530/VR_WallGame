@@ -10,6 +10,7 @@ TagManager:
   - CancelBt
   - Dialog
   - Timer
+  - Slave
   layers:
   - Default
   - TransparentFX
