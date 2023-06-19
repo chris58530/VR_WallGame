@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
         if (isHeadShaking)
         {
             GameManager.Instance.gameState = GameState.Start;
+            GameManager.Instance.GameStart = true;
             ReStart();
             Debug.Log("start game");
             return;
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
         if (isHeadNodding)
         {
             GameManager.Instance.gameState = GameState.Start;
+            GameManager.Instance.GameStart = true;
             Debug.Log("start game");
 
             ReStart();

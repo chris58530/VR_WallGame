@@ -9,7 +9,7 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField] private GameObject[] wall;
     [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
-    [SerializeField]private float Timer = 30;
+    [SerializeField] private float Timer;
     public int PlayerScore;
     SlaveType slaveType;
     protected override void Awake()
@@ -33,9 +33,16 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         slaveType = SlaveManager.Instance.currentSlave.slaveType;
         if (type == slaveType)
+        {
+            ViewCanvas.Instance.PlayAnswerView(true);
             PlayerScore += 5;
-        else PlayerScore -= 1;
 
+        }
+        else
+        {
+            ViewCanvas.Instance.PlayAnswerView(false);
+            PlayerScore -= 1;
+        }
         Debug.Log($"目前玩家分數 : {PlayerScore}");
         // TMP_Text text = GameObject.Find("Score").GetComponent<TMP_Text>();
         // text.text = PlayerScore.ToString();
@@ -43,6 +50,7 @@ public class ScoreManager : Singleton<ScoreManager>
     }
     public void TimeCount()
     {
+        if (!GameManager.Instance.GameStart) return;
         GameObject[] texts = GameObject.FindGameObjectsWithTag("Timer");
 
         if (Timer > 0)

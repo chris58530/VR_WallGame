@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
             UISourse.PlayOneShot(s.clip);
         }
     }
-    public void RPC_PlaySFX(string name)
+    public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s == null)
@@ -57,23 +57,23 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void Button_In()
-    {
-        PlayUI("Press1");
-    }
-    public void Bottun_Press()
-    {
-        PlayUI("Press2");
-    }
-    public void BGMVolume(float volume)
-    {
-        BGMSource.volume = volume;
-    }
-    public void SFXVolume(float volume)
-    {
-        sfxSource.volume = volume;
-        UISourse.volume = volume;
-    }
+    // public void Button_In()
+    // {
+    //     PlayUI("Press1");
+    // }
+    // public void Bottun_Press()
+    // {
+    //     PlayUI("Press2");
+    // }
+    // public void BGMVolume(float volume)
+    // {
+    //     BGMSource.volume = volume;
+    // }
+    // public void SFXVolume(float volume)
+    // {
+    //     sfxSource.volume = volume;
+    //     UISourse.volume = volume;
+    // }
 
     // {
     //     base.OnDestroy();

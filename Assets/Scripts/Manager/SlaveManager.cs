@@ -23,7 +23,7 @@ public class SlaveManager : Singleton<SlaveManager>
 
     private void Initailize()
     {
-        for (int i = 0; i < slavesPoint.Length; i++)
+        for (int i = 0; i < slavesPoint.Length - 1; i++)
         {
             SpawnSlave(i);
 
@@ -43,11 +43,12 @@ public class SlaveManager : Singleton<SlaveManager>
     }
     private void NextRound()
     {
-        SpawnSlave(0);
         foreach (Slave slave in slavesList)
         {
             slave.currentPoint += 1;
         }
+        SpawnSlave(0);
+
     }
     private void RoundStart()
     {

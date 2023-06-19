@@ -6,13 +6,14 @@ public class GameManager : Singleton<GameManager>
 {
     public GameState gameState = GameState.Begin;
 
-
+    public bool GameStart;
     protected override void Awake()
     {
         base.Awake();
     }
     private void Start()
     {
+        GameStart=false;
         Actions.GameInitialize?.Invoke();
         gameState = GameState.Begin;
     }
