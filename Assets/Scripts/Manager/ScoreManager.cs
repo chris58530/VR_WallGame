@@ -9,7 +9,7 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField] private GameObject[] wall;
     [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
-    float Timer = 30;
+    [SerializeField]private float Timer = 30;
     public int PlayerScore;
     SlaveType slaveType;
     protected override void Awake()
