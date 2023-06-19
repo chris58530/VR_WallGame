@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float threshold = 25f;
+    private float threshold = 20f;
     public bool positiveY = false;
     public bool negativeY = false;
     public bool positiveX = false;

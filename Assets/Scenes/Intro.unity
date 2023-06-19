@@ -5414,6 +5414,7 @@ MonoBehaviour:
   PlayerPoiont: {fileID: 1993325003}
   EndPoint: {fileID: 90965709}
   Timer: 60
+  winEffect: {fileID: 0}
   PlayerScore: 0
 --- !u!1 &718616345
 GameObject:
@@ -6722,7 +6723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9577\u5B98\u9192\u9192 \u60A8\u9084\u8A18\u5F97\u5982\u4F55\u9EDE\u982D\u8DDF\u6416\u982D\u55CE?\u8ACB\u5148\u6416\u982D\u7D66\u6211\u770B\u597D\u4E0D\u597D?"
+  m_text: "\u563F!\u4F60\u9577\u5F97\u5F88\u50CF\u6211\u7684\u9577\u5B98\uFF0C\u4F46\u4F60\u771F\u7684\u662F\u55CE?\u5982\u679C\u662F\u6211\u7684\u9577\u5B98\u8ACB\u6416\u982D\u7D66\u6211\u770B\u770B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb0da1abce87ebc4481a9fe3677aa704, type: 2}
   m_sharedMaterial: {fileID: 396546392512846980, guid: fb0da1abce87ebc4481a9fe3677aa704, type: 2}
@@ -8741,7 +8742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d233bed32d6f940a15fce829efed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMSounds: []
+  BGMSounds:
+  - name: BGM
+    clip: {fileID: 8300000, guid: 9669960e415ea604d81fb0784634df79, type: 3}
   sfxSounds: []
   UISounds:
   - name: Wrong
@@ -9584,7 +9587,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63553656b8db56c4caad242a4ebd14e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: []
+  text:
+  - "\u666E\u7279\u66FC\u65AF\u9577\u5B98\u597D~\u6211\u9019\u908A\u670934\u540D\u5370\u5C3C\u722A\u54C7\u5CF6\u7684\u5974\u5DE5"
+  - "\u662F\u9019\u6A23\u7684,\u524D\u4EFB\u9577\u5B98\u5974\u6613\u8332\u89BA\u5F97\u5821\u58D8\u53EA\u6709\u7802\u9ECF\u571F\u548C\u7D30\u6C99\u5BE6\u5728\u592A\u4E0D\u5805\u56FA\u4E86"
+  - "\u6240\u4EE5\u63A5\u4E0B\u4F86\u8981\u4F7F\u7528\u7CEF\u7C73\u6C41\u7CD6\u6C34\u86B5\u6BBC\u7C89\u548C\u7802\u652A\u62CC\u800C\u6210\u7684\u7D05\u6BDB\u571F\n"
+  - "\u4E26\u4F7F\u7528\u6211\u5011\u7684\u8377\u862D\u5F0F\u780C\u78DA\u6CD5\u5EFA\u9020\u57CE\u7246"
+  - "\u90A3\u5C31\u8ACB\u9577\u5B98\u7ACB\u523B\u5E36\u9818\u6211\u5011\u53BB\u5EFA\u9020\u57CE\u7246"
   shake: 0
   nod: 0
   player: {fileID: 1047095731}
@@ -10465,7 +10473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9577\u5B98\u9192\u9192 \u60A8\u9084\u8A18\u5F97\u5982\u4F55\u9EDE\u982D\u8DDF\u6416\u982D\u55CE?\u8ACB\u5148\u6416\u982D\u7D66\u6211\u770B\u597D\u4E0D\u597D?"
+  m_text: "\u563F!\u4F60\u9577\u5F97\u5F88\u50CF\u6211\u7684\u9577\u5B98\uFF0C\u4F46\u4F60\u771F\u7684\u662F\u55CE?\u5982\u679C\u662F\u6211\u7684\u9577\u5B98\u8ACB\u6416\u982D\u7D66\u6211\u770B\u770B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb0da1abce87ebc4481a9fe3677aa704, type: 2}
   m_sharedMaterial: {fileID: 396546392512846980, guid: fb0da1abce87ebc4481a9fe3677aa704, type: 2}
@@ -24848,7 +24856,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6104626008307022502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -10,6 +10,7 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField] private Transform PlayerPoiont;
     [SerializeField] private Transform EndPoint;
     [SerializeField] private float Timer;
+    [SerializeField] private GameObject winEffect;
     public int PlayerScore;
     SlaveType slaveType;
     protected override void Awake()
@@ -68,6 +69,14 @@ public class ScoreManager : Singleton<ScoreManager>
         else
         {
             GameManager.Instance.gameState = GameState.End;
+            if (PlayerScore > 100)
+            {
+                PlayerScore = 100;
+            }
+            else if (PlayerScore < 0)
+            {
+                PlayerScore = 0;
+            }
             for (int i = 0; i < texts.Length; i++)
             {
                 texts[i].GetComponent<TMP_Text>().text = "城牆完成度 : " + PlayerScore.ToString() + "%";
@@ -89,23 +98,45 @@ public class ScoreManager : Singleton<ScoreManager>
 
         if (PlayerScore >= 75)
         {
-            wall[0].SetActive(true);
+            StartCoroutine(WallActive(3));
+            Actions.GameEnd -= WallActive;
+
         }
         else if (PlayerScore < 75 && PlayerScore >= 50)
         {
-            wall[1].SetActive(true);
+            StartCoroutine(WallActive(2));
+            Actions.GameEnd -= WallActive;
+
 
         }
         else if (PlayerScore < 50 && PlayerScore >= 25)
         {
 
-            wall[2].SetActive(true);
+            StartCoroutine(WallActive(1));
+            Actions.GameEnd -= WallActive;
+
         }
         else
         {
-            wall[3].SetActive(true);
+            StartCoroutine(WallActive(0));
+
+            Actions.GameEnd -= WallActive;
 
         }
+
+    }
+    IEnumerator WallActive(int count)
+    {
+        for (int i = 0; i <= count; i++)
+        {
+            wall[i].SetActive(true);
+            AudioManager.Instance.PlaySFX("Boom");
+            yield return new WaitForSeconds(1);
+
+        }
+        AudioManager.Instance.PlayUI("Win");
+        winEffect.SetActive(true);
+        yield return null;
 
     }
     private void OnDisable()

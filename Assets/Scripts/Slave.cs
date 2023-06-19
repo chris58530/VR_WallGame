@@ -87,7 +87,7 @@ public class Slave : MonoBehaviour
         {
             for (int i = 0; i < texts.Length; i++)
             {
-                texts[i].GetComponent<TMP_Text>().text = "呼! 城牆蓋好囉大爺!";
+                texts[i].GetComponent<TMP_Text>().text = "太好啦 如此一來在隔壁麻豆社人進攻時我們一定能守住";
 
             }
         }

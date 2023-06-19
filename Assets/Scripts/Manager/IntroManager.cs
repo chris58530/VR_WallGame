@@ -7,9 +7,9 @@ public class IntroManager : Singleton<IntroManager>
 {
     [SerializeField, TextArea(4, 10)] private string[] text;
 
-    [SerializeField]private bool shake;
-    [SerializeField]private bool nod ;
-    [SerializeField]private IntroPlayer player;
+    [SerializeField] private bool shake;
+    [SerializeField] private bool nod;
+    [SerializeField] private IntroPlayer player;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class IntroManager : Singleton<IntroManager>
     }
     private void DectectIntro()
     {
+        if (shake && nod) return;
         if (player.isHeadShaking)
         {
             shake = true;
@@ -49,10 +50,29 @@ public class IntroManager : Singleton<IntroManager>
 
         for (int i = 0; i < texts.Length; i++)
         {
-            texts[i].GetComponent<TMP_Text>().text = "長官你恢復記憶了! 請馬上來蓋城牆";
-
+            texts[i].GetComponent<TMP_Text>().text = text[0];
         }
         yield return new WaitForSeconds(3);
-    UnityEngine.SceneManagement.SceneManager.LoadScene("VR6DOFfWalking");
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].GetComponent<TMP_Text>().text = text[1];
+        }
+        yield return new WaitForSeconds(3);
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].GetComponent<TMP_Text>().text = text[2];
+        }
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].GetComponent<TMP_Text>().text = text[3];
+        }
+        yield return new WaitForSeconds(3);
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].GetComponent<TMP_Text>().text = text[4];
+        }
+
+        yield return new WaitForSeconds(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("VR6DOFfWalking");
     }
 }
